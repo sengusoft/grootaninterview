@@ -4,14 +4,14 @@ End-to-end and API tests for [Thinking Tester Contact List](https://thinking-tes
 
 ## What is implemented
 
-- **QR**: Decodes `fixtures/reference-qr.png` (or `REFERENCE_QR_PATH`). If the file is missing, a user is created via `POST /users` and a matching QR PNG is generated so the flow is self-contained. The same PNG bytes are injected into the `/addUser` HTML response so a **page screenshot** can be decoded and compared to the reference payload (interview parity when you replace the fixture with your email PNG).
+- **QR**: Decodes `fixtures/reference-qr.png` (or `REFERENCE_QR_PATH`). If the file is missing, a user is created via `POST /users` and a matching QR PNG is generated so the flow is self-contained. The same PNG bytes are injected into the `/addUser` HTML response so a **page screenshot** can be decoded and compared to the reference payload (parity when you replace the fixture with your email PNG).
 - **API**: `POST /users/login` → `PATCH /users/me` with `{ "password": "..." }` → `POST /contacts` (expects **201**) → teardown `DELETE /users/me` (expects **200**). Each call records **duration** in `evidence/*.json`.
 - **UI**: Login on `/` (`#email`, `#password`, `#submit`), assert **Contact List** header, then contact table row (cookie forced to API token before `/contactList` because the app’s `document.cookie` parsing breaks some JWTs).
 - **Evidence**: `evidence/<iso-timestamp>_<step>.png|json` (gitignored). Playwright **video** is on for every test; traces on failure.
 - **Negative API tests**: wrong password, missing auth, bad bearer, bad PATCH token.
-- **Reporting**: see [Reporting deliverables](#reporting-deliverables-interview-items-1-3) below.
+- **Reporting**: see [Reporting deliverables](#reporting-deliverables-items-1-3) below.
 
-## Reporting deliverables (interview items 1–3)
+## Reporting deliverables (items 1–3)
 
 ### 1. Previous vs current execution (comparison report)
 
@@ -50,7 +50,7 @@ After any `playwright test` run:
 npx playwright show-report
 ```
 
-Allure is not required; the built-in HTML reporter plus `reports/comparison.html` cover the interview ask.
+Allure is not required; the built-in HTML reporter plus `reports/comparison.html` cover the ask.
 
 ## Verified API contract (smoke-checked against the live app)
 
@@ -75,7 +75,7 @@ npm install
 
 Browsers: `postinstall` runs `playwright install chromium`. For a clean manual install: `npx playwright install chromium`.
 
-## Interview QR fixture
+## QR 
 
 Copy your email QR image to:
 

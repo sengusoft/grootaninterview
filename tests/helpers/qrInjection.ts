@@ -13,7 +13,7 @@ export async function installQrImageInjection(page: Page, pngBase64: string): Pr
     const res = await route.fetch();
     const headers = Object.fromEntries(res.headersArray().map((h) => [h.name, h.value]));
     let html = await res.text();
-    const inject = `<div id="e2e-qr-wrap" style="padding:12px"><p>Interview QR (injected for parity with reference PNG)</p><img id="e2e-qr" src="data:image/png;base64,${pngBase64}" width="220" height="220" alt="QR"/></div>`;
+    const inject = `<div id="e2e-qr-wrap" style="padding:12px"><p> QR (injected for parity with reference PNG)</p><img id="e2e-qr" src="data:image/png;base64,${pngBase64}" width="220" height="220" alt="QR"/></div>`;
     if (html.includes('</body>')) {
       html = html.replace('</body>', `${inject}</body>`);
     } else {
