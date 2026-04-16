@@ -1,0 +1,11 @@
+node_modules/
+dist/
+test-results/
+playwright-report/
+reports/
+evidence/
+*.log
+.env
+tmp-*.json
+curl-body.txt
+playwright/.cache/

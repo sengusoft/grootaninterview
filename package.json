@@ -1,0 +1,26 @@
+{
+  "name": "contact-list-hybrid-e2e",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playwright + API hybrid tests for Thinking Tester Contact List",
+  "scripts": {
+    "postinstall": "playwright install chromium",
+    "test": "playwright test",
+    "test:baseline": "node scripts/ensure-report-dir.mjs baseline && cross-env RUN_PROFILE=baseline playwright test",
+    "test:current": "node scripts/ensure-report-dir.mjs current && cross-env RUN_PROFILE=current INCLUDE_REGRESSION_MARKER=1 playwright test",
+    "test:report:compare": "node scripts/compare-reports.mjs",
+    "test:compare:full": "npm run test:baseline && npm run test:current && npm run test:report:compare"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.51.0",
+    "@types/qrcode": "^1.5.5",
+    "@types/node": "^22.14.0",
+    "cross-env": "^7.0.3",
+    "typescript": "^5.8.0"
+  },
+  "dependencies": {
+    "jsqr": "^1.4.0",
+    "qrcode": "^1.5.4",
+    "sharp": "^0.34.1"
+  }
+}
