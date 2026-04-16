@@ -107,9 +107,7 @@ Open `reports\comparison.html` after `test:report:compare` or `test:compare:full
 
 HTML report (last run): `npx playwright show-report` or `playwright-report\index.html`.
 
-## Environment variables
 
-See [.env.example](.env.example). Copy to `.env` if you use a tool that loads it; Playwright does not load `.env` by default—set variables in the shell or your CI UI.
 
 ## Project layout
 
