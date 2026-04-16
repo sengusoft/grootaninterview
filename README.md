@@ -70,7 +70,6 @@ Allure is not required; the built-in HTML reporter plus `reports/comparison.html
 ## Install
 
 ```powershell
-Set-Location "c:\Users\Suprithi\Desktop\Grootan Sengu"
 npm install
 ```
 
@@ -87,7 +86,6 @@ The decoded text must be JSON with `email` and `password` for a user that **alre
 ## Run tests
 
 ```powershell
-Set-Location "c:\Users\Suprithi\Desktop\Grootan Sengu"
 
 # Full suite (JSON under reports/current/ because RUN_PROFILE defaults to non-baseline)
 npx playwright test
