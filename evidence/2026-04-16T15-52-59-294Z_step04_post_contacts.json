@@ -1,0 +1,33 @@
+{
+  "request": {
+    "firstName": "Sengu",
+    "lastName": "Cmo1nrl0c",
+    "birthdate": "1990-03-23",
+    "email": "sengusoft@gmail.com",
+    "phone": "9965379950",
+    "street1": "Erode",
+    "city": "Erode",
+    "stateProvince": "Tamil Nadu",
+    "postalCode": "638109",
+    "country": "India"
+  },
+  "response": {
+    "status": 201,
+    "durationMs": 371,
+    "body": {
+      "_id": "69e105da5770750015bad012",
+      "firstName": "Sengu",
+      "lastName": "Cmo1nrl0c",
+      "birthdate": "1990-03-23",
+      "email": "sengusoft@gmail.com",
+      "phone": "9965379950",
+      "street1": "Erode",
+      "city": "Erode",
+      "stateProvince": "Tamil Nadu",
+      "postalCode": "638109",
+      "country": "India",
+      "owner": "69e105d15770750015bad00f",
+      "__v": 0
+    }
+  }
+}

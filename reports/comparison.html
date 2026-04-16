@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Playwright Comparison Report</title>
+  <style>
+    :root { --bg: #f8fafc; --card: #fff; --border: #e2e8f0; --text: #0f172a; --muted: #64748b; }
+    * { box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, sans-serif; margin: 0; padding: 24px 32px; background: var(--bg); color: var(--text); }
+    h1 { font-size: 22px; margin-bottom: 4px; }
+    h2 { font-size: 17px; margin-top: 32px; border-bottom: 2px solid var(--border); padding-bottom: 6px; }
+    .meta { color: var(--muted); font-size: 13px; margin-bottom: 20px; }
+    .cards { display: flex; gap: 16px; flex-wrap: wrap; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; min-width: 200px; }
+    .card h3 { margin: 0 0 8px; font-size: 15px; }
+    .card-total { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+    .card-row { font-size: 13px; margin: 2px 0; display: flex; align-items: center; gap: 6px; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+    .dot-pass { background: #22c55e; }
+    .dot-fail { background: #ef4444; }
+    .dot-skip { background: #818cf8; }
+    table { border-collapse: collapse; width: 100%; margin-top: 12px; background: var(--card); border-radius: 8px; overflow: hidden; }
+    th, td { border: 1px solid var(--border); padding: 7px 10px; text-align: left; font-size: 13px; }
+    th { background: #f1f5f9; font-weight: 600; }
+    .num { text-align: right; font-variant-numeric: tabular-nums; }
+    .pill { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+    .pill-pass { background: #dcfce7; color: #166534; }
+    .pill-fail { background: #fee2e2; color: #991b1b; }
+    .pill-skip { background: #e0e7ff; color: #3730a3; }
+    .ev { max-width: 340px; }
+    .ev-link { display: inline-block; margin: 1px 4px 1px 0; padding: 1px 6px; border-radius: 4px; font-size: 11px; text-decoration: none; }
+    a.ev-link { color: #2563eb; background: #eff6ff; }
+    a.ev-link:hover { text-decoration: underline; }
+    .ev-img::before { content: "IMG "; font-weight: 700; color: #059669; }
+    .ev-vid::before { content: "VID "; font-weight: 700; color: #7c3aed; }
+    .ev-json::before { content: "JSON "; font-weight: 700; color: #d97706; }
+    footer { margin-top: 40px; color: var(--muted); font-size: 12px; }
+  </style>
+</head>
+<body>
+  <h1>Playwright Baseline vs Current — Comparison Report</h1>
+  <p class="meta">
+    Generated: 2026-04-16T15:50:45.573Z<br>
+    Baseline: <code>reports\baseline\results.json</code> | Current: <code>reports\current\results.json</code>
+  </p>
+
+  <div class="cards">
+    
+    <div class="card">
+      <h3>Baseline run</h3>
+      <div class="card-total">11 tests</div>
+      <div class="card-row"><span class="dot dot-pass"></span> Passed: 10</div>
+      <div class="card-row"><span class="dot dot-fail"></span> Failed: 0</div>
+      <div class="card-row"><span class="dot dot-skip"></span> Skipped: 1</div>
+    </div>
+    
+    <div class="card">
+      <h3>Current run</h3>
+      <div class="card-total">11 tests</div>
+      <div class="card-row"><span class="dot dot-pass"></span> Passed: 10</div>
+      <div class="card-row"><span class="dot dot-fail"></span> Failed: 1</div>
+      <div class="card-row"><span class="dot dot-skip"></span> Skipped: 0</div>
+    </div>
+  </div>
+
+  
+    <h2>Changed tests (baseline vs current)</h2>
+    <table>
+      <thead><tr><th>File</th><th>Test</th><th>Baseline</th><th>Current</th><th>Base dur</th><th>Cur dur</th></tr></thead>
+      <tbody>
+    <tr>
+      <td>hybrid/report-regression.spec.ts</td>
+      <td>INTENTIONAL_current_profile_regression_marker</td>
+      <td><span class="pill pill-skip">skipped</span></td>
+      <td><span class="pill pill-fail">failed</span></td>
+      <td class="num">3ms</td>
+      <td class="num">12ms</td>
+    </tr></tbody>
+    </table>
+  
+    <h2>Baseline — all tests</h2>
+    <table>
+      <thead><tr><th>File</th><th>Test</th><th>Status</th><th>Duration</th><th>Evidence</th></tr></thead>
+      <tbody>
+    <tr>
+      <td>hybrid/contact-flow.spec.ts</td>
+      <td>Step 1 — page QR matches reference PNG decode</td>
+      <td><span class="pill pill-pass">passed</span></td>
+      <td class="num">7.2s</td>
+      <td class="ev"><span class="ev-link">step01_page_qr</span> <span class="ev-link">step01_qr_decode</span> <a href="../test-results/hybrid-contact-flow-Hybrid-b4bb7-atches-reference-PNG-decode-chromium/test-finished-1.png" title="screenshot" class="ev-link ev-img">screenshot</a> <a href="../test-results/hybrid-contact-flow-Hybrid-b4bb7-atches-reference-PNG-decode-chromium/video.webm" title="video" class="ev-link ev-vid">video</a></td>
+    </tr>
+    <tr>
+      <td>hybrid/contact-flow.spec.ts</td>
+      <td>Step 2 — API login + PATCH password (timed)</td>
+      <td><span class="pill pill-pass">passed</span></td>
+      <td class="num">2.8s</td>
+      <td class="ev"><span class="ev-link">step02_login_initial</span> <span class="ev-link">step02_patch_password</span> <span class="ev-link">step02_login_after_patch</span></td>
+    </tr>
+    <tr>
+      <td>hybrid/contact-flow.spec.ts</td>
+      <td>Step 3 — UI login with updated password (timed)</td>
+      <td><span class="pill pill-pass">passed</span></td>
+      <td class="num">3.6s</td>
+      <td class="ev"><span class="ev-link">step03_ui_after_login</span> <span class="ev-link">step03_ui_login_timing</span> <a href="../test-results/hybrid-contact-flow-Hybrid-fba0a-ith-updated-password-timed--chromium/test-finished-1.png" title="screenshot" class="ev-link ev-img">screenshot</a> <a href="../test-results/hybrid-contact-flow-Hybrid-fba0a-ith-updated-password-timed--chromium/video.webm" title="video" class="ev-link ev-vid">video</a></td>
+    </tr>
+    <tr>
+      <td>hybrid/contact-flow.spec.ts</td>
+      <td>Step 4 — API add contact returns 201 (timed)</td>
+      <td><span class="pill pill-pass">passed</span></td>
+      <td class="num">336ms</td>
+      <td class="ev"><span class="ev-link">step04_post_contacts</span></td>
+    </tr>
+    <tr>
+      <td>hybrid/contact-flow.spec.ts</td>
+      <td>Step 5 — Contacts table shows new row + highlighted screenshot</td>
+      <td><span class="pill pill-pass">passed</span></td>
+      <td class="num">2.9s</td>
+      <td class="ev"><span class="ev-link">step05_contact_row_highlight</span> <a href="../test-results/hybrid-contact-flow-Hybrid-c170d--row-highlighted-screenshot-chromium/test-finished-1.png" title="screenshot" class="ev-link ev-img">screenshot</a> <a href="../test-results/hybrid-contact-flow-Hybrid-c170d--row-highlighted-screenshot-chromium/video.webm" title="video" class="ev-link ev-vid">video</a></td>
+    </tr>
+    <tr>
+      <td>hybrid/negative-api.spec.ts</td>
+      <td>POST /users/login with unknown user returns 401</td>
+      <td><span class="pill pill-pass">passed</span></td>
+      <td class="num">313ms</td>
+      <td class="ev"><span class="ev-link">neg_login_unknown_user</span></td>
+    </tr>
+    <tr>
+      <td>hybrid/negative-api.spec.ts</td>
+      <td>POST /users/login with wrong password returns 401</td>
+      <td><span class="pill pill-pass">passed</span></td>
+      <td class="num">2.9s</td>
+      <td class="ev"><span class="ev-link">neg_login_wrong_password</span></td>
+    </tr>
+    <tr>
+      <td>hybrid/negative-api.spec.ts</td>
+      <td>POST /contacts without Authorization returns 401</td>
+      <td><span class="pill pill-pass">passed</span></td>
+      <td class="num">319ms</td>
+      <td class="ev"><span class="ev-link">neg_contacts_no_auth</span></td>
+    </tr>
+    <tr>
+      <td>hybrid/negative-api.spec.ts</td>
+      <td>POST /contacts with invalid bearer token returns 401</td>
+      <td><span class="pill pill-pass">passed</span></td>
+      <td class="num">318ms</td>
+      <td class="ev"><span class="ev-link">neg_contacts_invalid_token</span></td>
+    </tr>
+    <tr>
+      <td>hybrid/negative-api.spec.ts</td>
+      <td>PATCH /users/me with invalid bearer token is rejected</td>
+      <td><span class="pill pill-pass">passed</span></td>
+      <td class="num">377ms</td>
+      <td class="ev"><span class="ev-link">neg_patch_invalid_token</span></td>
+    </tr>
+    <tr>
+      <td>hybrid/report-regression.spec.ts</td>
+      <td>INTENTIONAL_current_profile_regression_marker</td>
+      <td><span class="pill pill-skip">skipped</span></td>
+      <td class="num">3ms</td>
+      <td class="ev"></td>
+    </tr></tbody>
+    </table>
+  
+    <h2>Current — all tests</h2>
+    <table>
+      <thead><tr><th>File</th><th>Test</th><th>Status</th><th>Duration</th><th>Evidence</th></tr></thead>
+      <tbody>
+    <tr>
+      <td>hybrid/contact-flow.spec.ts</td>
+      <td>Step 1 — page QR matches reference PNG decode</td>
+      <td><span class="pill pill-pass">passed</span></td>
+      <td class="num">6.0s</td>
+      <td class="ev"><span class="ev-link">step01_page_qr</span> <span class="ev-link">step01_qr_decode</span> <a href="../test-results/hybrid-contact-flow-Hybrid-b4bb7-atches-reference-PNG-decode-chromium/test-finished-1.png" title="screenshot" class="ev-link ev-img">screenshot</a> <a href="../test-results/hybrid-contact-flow-Hybrid-b4bb7-atches-reference-PNG-decode-chromium/video.webm" title="video" class="ev-link ev-vid">video</a></td>
+    </tr>
+    <tr>
+      <td>hybrid/contact-flow.spec.ts</td>
+      <td>Step 2 — API login + PATCH password (timed)</td>
+      <td><span class="pill pill-pass">passed</span></td>
+      <td class="num">2.7s</td>
+      <td class="ev"><span class="ev-link">step02_login_initial</span> <span class="ev-link">step02_patch_password</span> <span class="ev-link">step02_login_after_patch</span></td>
+    </tr>
+    <tr>
+      <td>hybrid/contact-flow.spec.ts</td>
+      <td>Step 3 — UI login with updated password (timed)</td>
+      <td><span class="pill pill-pass">passed</span></td>
+      <td class="num">3.7s</td>
+      <td class="ev"><span class="ev-link">step03_ui_after_login</span> <span class="ev-link">step03_ui_login_timing</span> <a href="../test-results/hybrid-contact-flow-Hybrid-fba0a-ith-updated-password-timed--chromium/test-finished-1.png" title="screenshot" class="ev-link ev-img">screenshot</a> <a href="../test-results/hybrid-contact-flow-Hybrid-fba0a-ith-updated-password-timed--chromium/video.webm" title="video" class="ev-link ev-vid">video</a></td>
+    </tr>
+    <tr>
+      <td>hybrid/contact-flow.spec.ts</td>
+      <td>Step 4 — API add contact returns 201 (timed)</td>
+      <td><span class="pill pill-pass">passed</span></td>
+      <td class="num">319ms</td>
+      <td class="ev"><span class="ev-link">step04_post_contacts</span></td>
+    </tr>
+    <tr>
+      <td>hybrid/contact-flow.spec.ts</td>
+      <td>Step 5 — Contacts table shows new row + highlighted screenshot</td>
+      <td><span class="pill pill-pass">passed</span></td>
+      <td class="num">3.8s</td>
+      <td class="ev"><span class="ev-link">step05_contact_row_highlight</span> <a href="../test-results/hybrid-contact-flow-Hybrid-c170d--row-highlighted-screenshot-chromium/test-finished-1.png" title="screenshot" class="ev-link ev-img">screenshot</a> <a href="../test-results/hybrid-contact-flow-Hybrid-c170d--row-highlighted-screenshot-chromium/video.webm" title="video" class="ev-link ev-vid">video</a></td>
+    </tr>
+    <tr>
+      <td>hybrid/negative-api.spec.ts</td>
+      <td>POST /users/login with unknown user returns 401</td>
+      <td><span class="pill pill-pass">passed</span></td>
+      <td class="num">324ms</td>
+      <td class="ev"><span class="ev-link">neg_login_unknown_user</span></td>
+    </tr>
+    <tr>
+      <td>hybrid/negative-api.spec.ts</td>
+      <td>POST /users/login with wrong password returns 401</td>
+      <td><span class="pill pill-pass">passed</span></td>
+      <td class="num">2.8s</td>
+      <td class="ev"><span class="ev-link">neg_login_wrong_password</span></td>
+    </tr>
+    <tr>
+      <td>hybrid/negative-api.spec.ts</td>
+      <td>POST /contacts without Authorization returns 401</td>
+      <td><span class="pill pill-pass">passed</span></td>
+      <td class="num">327ms</td>
+      <td class="ev"><span class="ev-link">neg_contacts_no_auth</span></td>
+    </tr>
+    <tr>
+      <td>hybrid/negative-api.spec.ts</td>
+      <td>POST /contacts with invalid bearer token returns 401</td>
+      <td><span class="pill pill-pass">passed</span></td>
+      <td class="num">332ms</td>
+      <td class="ev"><span class="ev-link">neg_contacts_invalid_token</span></td>
+    </tr>
+    <tr>
+      <td>hybrid/negative-api.spec.ts</td>
+      <td>PATCH /users/me with invalid bearer token is rejected</td>
+      <td><span class="pill pill-pass">passed</span></td>
+      <td class="num">323ms</td>
+      <td class="ev"><span class="ev-link">neg_patch_invalid_token</span></td>
+    </tr>
+    <tr>
+      <td>hybrid/report-regression.spec.ts</td>
+      <td>INTENTIONAL_current_profile_regression_marker</td>
+      <td><span class="pill pill-fail">failed</span></td>
+      <td class="num">12ms</td>
+      <td class="ev"><a href="../test-results/hybrid-report-regression-I-c39df-t-profile-regression-marker-chromium/error-context.md" title="error-context" class="ev-link ev-json">error-context</a></td>
+    </tr></tbody>
+    </table>
+
+  <footer>Report generated by <code>scripts/compare-reports.mjs</code></footer>
+</body>
+</html>

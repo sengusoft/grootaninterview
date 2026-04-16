@@ -1,0 +1,14 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/contacts",
+    "auth": "Bearer invalid"
+  },
+  "response": {
+    "status": 401,
+    "durationMs": 318,
+    "body": {
+      "error": "Please authenticate."
+    }
+  }
+}

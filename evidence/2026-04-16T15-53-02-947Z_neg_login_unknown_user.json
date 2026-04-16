@@ -1,0 +1,11 @@
+{
+  "request": {
+    "email": "(dynamic)",
+    "password": "[REDACTED]"
+  },
+  "response": {
+    "status": 401,
+    "durationMs": 379,
+    "body": null
+  }
+}

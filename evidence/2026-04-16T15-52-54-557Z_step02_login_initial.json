@@ -1,0 +1,16 @@
+{
+  "response": {
+    "status": 200,
+    "durationMs": 310,
+    "body": {
+      "user": {
+        "_id": "69e105d15770750015bad00f",
+        "firstName": "QR",
+        "lastName": "Bootstrap",
+        "email": "e2e_qr_1776354767954@test.com",
+        "__v": 2
+      },
+      "token": "[REDACTED]"
+    }
+  }
+}

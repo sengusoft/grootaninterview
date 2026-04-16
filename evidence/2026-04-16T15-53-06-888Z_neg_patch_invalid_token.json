@@ -1,0 +1,14 @@
+{
+  "request": {
+    "method": "PATCH",
+    "path": "/users/me",
+    "auth": "Bearer invalid"
+  },
+  "response": {
+    "status": 401,
+    "durationMs": 279,
+    "body": {
+      "error": "Please authenticate."
+    }
+  }
+}
