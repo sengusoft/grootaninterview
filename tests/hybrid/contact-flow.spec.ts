@@ -77,7 +77,7 @@ test.describe('Hybrid flow — QR, API password reset, UI login, API contact, UI
     });
     expect([200, 204]).toContain(del.status);
   });
-
+  //Test Case 1 implementation
   test('Step 1 — page QR matches reference PNG decode', async ({ page, baseURL }, testInfo) => {
     test.skip(!baseURL, 'baseURL missing');
 
@@ -109,7 +109,7 @@ test.describe('Hybrid flow — QR, API password reset, UI login, API contact, UI
       filePayload: qrSource === 'fixture' ? fromFile : JSON.stringify(creds),
     }, testInfo);
   });
-
+  //Test Case 2 implementation
   test('Step 2 — API login + PATCH password (timed)', async ({}, testInfo) => {
     const login = await api.login({ email: creds.email, password: creds.password });
     await saveEvidenceJson('step02_login_initial', {
@@ -142,7 +142,7 @@ test.describe('Hybrid flow — QR, API password reset, UI login, API contact, UI
     expect(relogin.status).toBe(200);
     token = (relogin.json as { token: string }).token;
   });
-
+  //Test Case 3 implementation
   test('Step 3 — UI login with updated password (timed)', async ({ page, baseURL }, testInfo) => {
     test.skip(!baseURL, 'baseURL missing');
     const t0 = Date.now();
@@ -156,7 +156,7 @@ test.describe('Hybrid flow — QR, API password reset, UI login, API contact, UI
     await saveEvidenceJson('step03_ui_login_timing', { durationMs: loginMs, url: page.url() }, testInfo);
     expect(loginMs).toBeLessThan(120_000);
   });
-
+  //Test Case 4 implementation
   test('Step 4 — API add contact returns 201 (timed)', async ({}, testInfo) => {
     expect(token).toBeTruthy();
     const res = await api.addContact(token!, contactPayload);
@@ -172,7 +172,7 @@ test.describe('Hybrid flow — QR, API password reset, UI login, API contact, UI
     expect(body.phone).toBe(contactPayload.phone);
     expect(body.birthdate).toBe(contactPayload.birthdate);
   });
-
+  //Test Case 5 implementation
   test('Step 5 — Contacts table shows new row + highlighted screenshot', async ({ page, baseURL }, testInfo) => {
     test.skip(!baseURL, 'baseURL missing');
     expect(token).toBeTruthy();

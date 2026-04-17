@@ -4,7 +4,7 @@ import { timedFetch } from '../../src/helpers/timedFetch';
 import { saveEvidenceJson } from '../../src/helpers/evidence';
 
 const base = () => process.env.CONTACT_LIST_BASE_URL ?? 'https://thinking-tester-contact-list.herokuapp.com';
-
+  //Test Case 1 implementation
 test.describe('Negative API scenarios', () => {
   test('POST /users/login with unknown user returns 401', async ({}, testInfo) => {
     const api = new ContactListApi(base());
@@ -15,7 +15,7 @@ test.describe('Negative API scenarios', () => {
     }, testInfo);
     expect(res.status).toBe(401);
   });
-
+  //Test Case 2 implementation
   test('POST /users/login with wrong password returns 401', async ({}, testInfo) => {
     const api = new ContactListApi(base());
     const created = await api.addUser({
@@ -38,7 +38,7 @@ test.describe('Negative API scenarios', () => {
     const del = await api.deleteMe(token);
     expect([200, 204]).toContain(del.status);
   });
-
+  //Test Case 3 implementation
   test('POST /contacts without Authorization returns 401', async ({}, testInfo) => {
     const url = `${base().replace(/\/$/, '')}/contacts`;
     const res = await timedFetch(url, {
@@ -52,7 +52,7 @@ test.describe('Negative API scenarios', () => {
     }, testInfo);
     expect(res.status).toBe(401);
   });
-
+  //Test Case 4 implementation
   test('POST /contacts with invalid bearer token returns 401', async ({}, testInfo) => {
     const api = new ContactListApi(base());
     const res = await api.addContact('definitely-not-valid.jwt.token', {
@@ -73,7 +73,7 @@ test.describe('Negative API scenarios', () => {
     }, testInfo);
     expect(res.status).toBe(401);
   });
-
+  //Test Case 5 implementation
   test('PATCH /users/me with invalid bearer token is rejected', async ({}, testInfo) => {
     const api = new ContactListApi(base());
     const res = await api.patchMe('not-a-valid-token', { password: 'Whatever123!' });

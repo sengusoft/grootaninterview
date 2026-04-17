@@ -1,0 +1,11 @@
+{
+  "request": {
+    "method": "DELETE",
+    "path": "/users/me"
+  },
+  "response": {
+    "status": 200,
+    "durationMs": 286,
+    "body": null
+  }
+}
